@@ -37,9 +37,15 @@ export function KeyboardNav() {
 					return;
 				}
 
+				if (e.key == "p") {
+					e.preventDefault();
+					redirectTo("/profile", router)
+					return;
+				}
+
 				if (e.key == "f") {
 					e.preventDefault();
-					redirectTo("/blog/flail", router)
+					redirectTo("/flail", router)
 					return;
 				}
 
@@ -106,7 +112,7 @@ export function KeyboardNav() {
 					e.preventDefault();
 					setMode("normal");
 					setIsNavigationOpen(false)
-					redirectTo("/blog/flail", router)
+					redirectTo("/flail", router)
 					return;
 				}
 

@@ -28,11 +28,6 @@ export default function Flail() {
       <hr className="w-full md:w-3/4 lg:w-1/2 mx-auto my-6 border-gray-400" />
       <div className="mx-auto md:mt-20">
         <h2 className="text-xl mb-6">posts</h2>
-        <PostItem slug="flail/asdasd" />
-        <PostItem slug="flail/abcde" />
-        <PostItem slug="flail/lkjlkj" />
-        <PostItem slug="flail/iouoiu" />
-        <PostItem slug="flail/uryuyr" />
       </div>
     </div>
   );
