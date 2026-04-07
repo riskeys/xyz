@@ -132,3 +132,23 @@
     @apply font-mono;
   }
 }
+
+@media (pointer: coarse) and (hover: none) {
+  .vim-only {
+    display: none;
+  }
+
+  .touch-only {
+    display: block;
+  }
+}
+
+@media (pointer: fine) {
+  .vim-only {
+    display: block;
+  }
+
+  .touch-only {
+    display: none;
+  }
+}

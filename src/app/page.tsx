@@ -1,52 +1,67 @@
+"use client"
+
+import LandingCommand from "@/components/landing/command";
+import { useTitle } from "@/context/title.provide";
+import { PowerGlitch } from "powerglitch";
+import { useEffect } from "react";
+
 export default function Home() {
+  const { setTitle } = useTitle();
+
+
+  useEffect(() => {
+    setTitle("riskeys.xyz - home");
+  }, [setTitle])
+
+  useEffect(() => {
+    const element = document.getElementsByClassName("glitch");
+    if (element) PowerGlitch.glitch(".glitch", {
+      timing: {
+        duration: 1200,
+        // iterations: 50,
+      }
+    });
+  }, [])
+
   return (
-    // <div id="container" className="h-[100vh] m-0 p-10 bg-zinc-50 font-sans dark:bg-black">
-    <div id="container" className="h-[100vh] m-0 p-10 bg-black font-sans dark:bg-black">
-      <div id="mainframe" className="bg-gray-900/90 border-2 border-blue-900 pb-10 w-full h-full rounded-t-2xl">
-        <div id="titlebar" className="flex flex-row justify-center items-start bg-blue-900 rounded-t-xl text-white py-1">
-          <span>riskeys.xyz - home</span>
+    <div id="content" className="transition-opacity duration-500 ease-in-out text-white w-full md:w-3/4 mx-auto items-center justify-center flex flex-col my-48 md:my-32 font-mono gap-2">
+      <div className="glitch text-lg font-semibold pb-8">
+        riskeys.xyz
+      </div>
+      <div className="text-sm">
+        version 3.14.26-dev
+      </div>
+      <div className="text-sm md:text-base text-center">
+        <div className="hidden md:flex md:flex-row">
+          by Rizcky a.k.a riskeys, a software/web developer
         </div>
-        <div id="content" className="text-white w-1/2 mx-auto items-center justify-center flex flex-col my-32 font-mono gap-2">
-          <div className="text-lg font-semibold pb-8">
-            riskeys.xyz
+        <div className="md:hidden flex flex-col">
+          <div>
+            by Rizcky a.k.a riskeys
           </div>
-          <div className="text-base">
-            version 3.07.94-dev
-          </div>
-          <div className="text-base">
-            by Rizcky a.k.a riskeys, a software/web developer
-          </div>
-          <div className="text-base">
-            mail: rizcky.rakhman@gmail.com
-          </div>
-          <div className="text-base">
-            Design inspired by personal computer setup: i3-wm, Vim
-          </div>
-          <div className="hidden border-test text-base flex-row justify-between w-3/4">
-            <div className="basis-1/8">type</div>
-            <div className="basis-3/10">:q&lt;Enter&gt;</div>
-            <div className="basis-1/5 "></div>
-            <div className="basis-3/8">to exit</div>
-          </div>
-          <div className="text-base flex flex-row justify-between w-2/3 mt-10">
-            <div className="basis-1/8">type</div>
-            <div className="basis-3/10">:Blog&lt;Enter&gt;</div>
-            <div className="basis-1/5 ">or press b</div>
-            <div className="basis-3/8">to redirect to blog</div>
-          </div>
-          <div className="text-base flex flex-row justify-between w-2/3">
-            <div className="basis-1/8">type</div>
-            <div className="basis-3/10">:Profile&lt;Enter&gt;</div>
-            <div className="basis-1/5 ">or press p</div>
-            <div className="basis-3/8">to open profile page</div>
-          </div>
-          <div className="text-base flex flex-row justify-between w-2/3">
-            <div className="basis-1/8">type</div>
-            <div className="basis-3/10">:TechStack&lt;Enter&gt;</div>
-            <div className="basis-1/5 ">or press t</div>
-            <div className="basis-3/8">to open tech stack info</div>
+          <div>
+            a software/web developer
           </div>
         </div>
+      </div>
+      <div className="text-sm md:text-base">
+        mail: rizcky.rakhman@gmail.com
+      </div>
+      <div className="hidden text-base flex-row justify-between w-3/4">
+        <div className="basis-1/8">type</div>
+        <div className="basis-3/10">:q&lt;Enter&gt;</div>
+        <div className="basis-1/5 "></div>
+        <div className="basis-3/8">to exit</div>
+      </div>
+      <div className="vim-only text-sm md:text-base my-5">
+        press g to open navigation menu
+      </div>
+      <LandingCommand />
+      <div className="vim-only text-sm my-5">
+        * if you use Vimium/Surfingkey or similar extension, please disable it first :)
+      </div>
+      <div className="touch-only text-[0.65rem] md:text-[0.8rem] font-semibold md:font-normal italic text-white dark:text-white pt-10 md:pt-24">
+        * if you happen to open this site in mobile/tablet, you might want to try to open the site in desktop mode for more vim-like experience :)
       </div>
     </div>
   );
