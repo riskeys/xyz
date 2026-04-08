@@ -17,9 +17,11 @@ export default function Home() {
           </div>
           <div className="text-sm leading-6 md:text-md/loose w-full text-justify md:w-4/5 mx-auto pt-2 md:pt-8">
             <p className="my-4 md:my-2">
-              this website is built with Next.js and TailwindCSS.</p>
+              this website is built with Next.js and TailwindCSS.
+            </p>
             <p className="my-4 md:my-2">
-              I was thinking of building it with htmx (still with js backend LOL) (deno btw). However, I want to build something with Next.js just because I have never built anything with it (backend dev, doh) (that's also why this looks so lame...).</p>
+              I was thinking of building it with htmx (still with js backend LOL) (deno btw). However, I want to build something with Next.js just because I have never built anything with it (backend dev, doh) (that's also why this looks so lame...).
+            </p>
             <p className="my-4 md:my-2">
               If you happen to open this site in mobile/tablet, I'd suggest you try to open the site using your laptop or pc as well, because I am building this site with the intention for people to feel the vim-like experience.
             </p>
