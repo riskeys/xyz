@@ -6,22 +6,35 @@ import matter from "gray-matter";
 
 const postsDirectory = "src/content/blog/";
 
+interface PostMetadata {
+  title: string;
+  author: string;
+  date: string;
+  preview: string;
+}
+
 export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
-  const fileContents = await readFile(fullPath, 'utf8');
+  try {
+    const fileContents = await readFile(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const meta = matterResult.data as PostMetadata;
 
-  const matterResult = matter(fileContents);
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
+    const contentHtml = processedContent.toString();
 
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+    return {
+      id,
+      contentHtml,
+      meta,
+    };
 
-  return {
-    id,
-    contentHtml,
-    ...matterResult.data,
-  };
+  } catch (error) {
+    return null
+  }
+
 }
 
 
@@ -34,12 +47,14 @@ export async function getAllPosts() {
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = await readFile(fullPath, 'utf8');
 
-    const { data } = matter(fileContents)
+    const meta = matter(fileContents)
+    const metadata = meta.data as PostMetadata;
 
     return {
       slug,
-      title: data.title,
-      date: data.date,
+      title: metadata.title,
+      date: metadata.date,
+      preview: metadata.preview
     }
   });
 

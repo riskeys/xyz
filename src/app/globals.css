@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin '@tailwindcss/typography';
+.prose blockquote p {
+  white-space: pre-line;
+}
 
 @custom-variant dark (&:is(.dark *));
 

@@ -1,5 +1,6 @@
 import BlogPost from "@/components/blog/blog.post";
 import { getPostData } from "@/lib/posts";
+import { notFound } from "next/navigation";
 
 export default async function Page({
   params,
@@ -8,10 +9,12 @@ export default async function Page({
 }) {
   const { slug } = await params;
 
-  const data = await getPostData(slug);
-  console.log(data.title);
+  const post = await getPostData(slug);
+  if (post == null) {
+    return notFound();
+  }
 
   return (
-    <BlogPost title={data.title} content={data.contentHtml} />
+    <BlogPost title={post.meta.title} content={post.contentHtml} />
   );
 }

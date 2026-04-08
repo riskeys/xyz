@@ -1,7 +1,8 @@
 "use client"
 
 import { useTitle } from "@/context/title.provide";
-import { use, useEffect } from "react";
+import Link from "next/link";
+import { useEffect } from "react";
 
 export default function BlogPost({ title, content }: { title: string, content: string }) {
 	const { setTitle } = useTitle();
@@ -11,29 +12,28 @@ export default function BlogPost({ title, content }: { title: string, content: s
 	}, [setTitle])
 
 	return (
-		// <div id="container" className="h-[100vh] m-0 p-10 bg-zinc-50 font-sans dark:bg-black">
 		<div id="content" className=" transition-opacity duration-500 ease-in-out text-white mx-auto flex flex-col my-4 font-mono gap-2">
-			<div id="content-nav" className="w-9/10">
-				<div className="touch-only">
+			<div id="content-nav" className="w-8/10 mx-auto text-right ">
+				<div className="touch-only mb-10">
 					<div className="text-xs md:text-sm top-10 left-10 absolute">
-						back to blog
+						<Link href="/blog">&lt;- blog</Link>
 					</div>
 				</div >
 				<div className="vim-only">
 					<div className="text-right">
-						press `gb` to go back to blog
+						press `g` to open navigation menu
 					</div>
 				</div>
 			</div>
-			<div className="prose prose-invert items-center justify-center flex flex-col mt-10">
-				<div className=" text-lg font-semibold">
-				</div>
-				<div className=" text-sm font-semibold">
-					{title}
-				</div>
-				<div dangerouslySetInnerHTML={{ __html: content }}>
-				</div>
+			<div className=" w-full md:w-4/5 mx-auto">
+				<article className="prose prose-sm prose-stone md:prose-base prose-invert max-w-none w-full mx-auto ">
+					<div className="text-center text-xl font-semibold mb-10">
+						{title}
+					</div>
+					<div dangerouslySetInnerHTML={{ __html: content }}>
+					</div>
 
+				</article>
 			</div>
 		</div>
 	);

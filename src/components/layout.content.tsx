@@ -12,7 +12,7 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
 			<KeyboardNav />
 			<div id="container" className="h-[100vh] m-0 p-10 font-sans lg:pb-16">
 				<div className="vim-only">
-					<div id="titlebar" className="text-center flex flex-row justify-center items-start bg-blue-900 rounded-t-2xl text-black dark:text-white py-1 sticky top-0 z-10">
+					<div id="titlebar" className="font-mono text-center flex flex-row justify-center items-start bg-blue-900 rounded-t-2xl text-black dark:text-white py-1 sticky top-0 z-10">
 						<span>{title}</span>
 					</div>
 				</div>
