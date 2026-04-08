@@ -24,7 +24,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div id="content" className="transition-opacity duration-500 ease-in-out text-white w-full md:w-3/4 mx-auto items-center justify-center flex flex-col my-48 md:my-32 font-mono gap-2">
+    <div id="content" className="transition-opacity duration-500 ease-in-out text-white w-full md:w-3/4 mx-auto items-center justify-center flex flex-col my-32 lg:my-48 md:my-32 font-mono gap-2">
       <div className="glitch text-lg font-semibold pb-8">
         riskeys.xyz
       </div>

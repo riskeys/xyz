@@ -1,5 +1,6 @@
 "use client"
 import { useTitle } from "@/context/title.provide";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Profile() {
@@ -11,6 +12,20 @@ export default function Profile() {
   return (
     <>
       <div className="transition-opacity duration-500 ease-in-out text-white mx-auto items-center justify-center flex flex-col py-12 font-mono gap-2">
+
+        <div id="content-nav" className="w-8/10 mx-auto text-right ">
+          <div className="touch-only mb-4">
+            <div className="text-xs md:text-sm top-10 left-10 absolute">
+              <Link href="/">&lt;- home</Link>
+            </div>
+          </div >
+          <div className="vim-only">
+            <div className="text-right">
+              press `g` to open navigation menu
+            </div>
+          </div>
+        </div>
+
         <div className="text-xl font-semibold pb-4">
           some bits about me...
         </div>

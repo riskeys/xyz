@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function LandingCommand() {
 
 	return (
-		<div className="w-3/4 xl:w-1/2 mt-4">
+		<div className="w-full md:w-3/4 xl:w-1/2 mt-4">
 			<div className="vim-only ">
 				<div className="flex-col xl:w-2/3 xl:mx-auto items-center">
 					{ /* <HomeCommand />  */}
@@ -15,11 +15,14 @@ export default function LandingCommand() {
 			<div className="touch-only">
 				<div className=" flex flex-col text-center text-sm">
 					<div className="flex flex-row justify-center">
-						<div className="text-center basis-1/2 py-1 border-r-1 border-white">
+						<div className="text-center basis-1/3 py-1 border-r-1 border-white">
 							<Link href={"/blog"} className="text-blue-500 dark:text-blue-500">blog</Link>
 						</div>
-						<div className="text-center basis-1/2 py-1">
+						<div className="text-center basis-1/3 py-1">
 							<Link href={"/profile"} className="text-blue-500 dark:text-blue-500">profile</Link>
+						</div>
+						<div className="text-center basis-1/3 py-1 border-l-1 border-white">
+							<Link href={"/music"} className="text-blue-500 dark:text-blue-500">music</Link>
 						</div>
 					</div>
 					<div className="hidden flex-row justify-center">

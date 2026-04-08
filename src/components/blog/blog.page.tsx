@@ -2,6 +2,7 @@
 
 import PostItem from "@/components/blog/post.item"
 import { useTitle } from "@/context/title.provide";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Blog({ posts }: { posts: { slug: string, title: string, preview: string, date: string }[] }) {
@@ -12,6 +13,18 @@ export default function Blog({ posts }: { posts: { slug: string, title: string, 
 
 	return (
 		<div id="content" className="transition-opacity duration-500 ease-in-out text-white mx-auto items-center justify-center flex flex-col my-4 font-mono gap-2">
+			<div id="content-nav" className="w-8/10 mx-auto text-right ">
+				<div className="touch-only mb-10">
+					<div className="text-xs md:text-sm top-10 left-10 absolute">
+						<Link href="/">&lt;- home</Link>
+					</div>
+				</div >
+				<div className="vim-only">
+					<div className="text-right">
+						press `g` to open navigation menu
+					</div>
+				</div>
+			</div>
 			<div className="text-lg font-semibold pb-4">
 				blog
 			</div>

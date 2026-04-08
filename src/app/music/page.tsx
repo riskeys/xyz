@@ -1,6 +1,20 @@
+import Link from "next/link";
+
 export default function Music() {
   return (
     <div id="content" className="transition-opacity duration-500 ease-in-out text-white mx-auto items-center justify-center flex flex-col my-4 font-mono gap-2">
+      <div id="content-nav" className="w-8/10 mx-auto text-right ">
+        <div className="touch-only mb-4">
+          <div className="text-xs md:text-sm top-10 left-10 absolute">
+            <Link href="/">&lt;- home</Link>
+          </div>
+        </div >
+        <div className="vim-only">
+          <div className="text-right">
+            press `g` to open navigation menu
+          </div>
+        </div>
+      </div>
       <div className="text-lg font-semibold pb-4">
         my web of sound
       </div>
@@ -13,7 +27,7 @@ export default function Music() {
       </div>
       <hr className="w-full md:w-1/2 mx-auto my-6 border-gray-400" />
       <iframe id="iframe-touch" className="touch-only rounded-4xl" src="https://open.spotify.com/embed/artist/7Fc3ZYvTKES9TZlWvktNqI?utm_source=generator&theme=0"
-        width="50%" height="680"
+        width="100%" height="680"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       <iframe id="iframe-vim" className="opacity-0 hidden rounded-4xl transition-opacity duration-1000" src="https://open.spotify.com/embed/artist/7Fc3ZYvTKES9TZlWvktNqI?utm_source=generator&theme=0"
         width="50%" height="680"
