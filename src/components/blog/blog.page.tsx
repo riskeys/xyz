@@ -4,7 +4,7 @@ import PostItem from "@/components/blog/post.item"
 import { useTitle } from "@/context/title.provide";
 import { useEffect } from "react";
 
-export default function Blog({ posts }: { posts: { slug: string, title: string, preview: string, date: Date }[] }) {
+export default function Blog({ posts }: { posts: { slug: string, title: string, preview: string, date: string }[] }) {
 	const { setTitle } = useTitle();
 	useEffect(() => {
 		setTitle("riskeys.xyz - blog");
